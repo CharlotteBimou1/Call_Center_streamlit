@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Aug 21 17:34:46 2021
+
+@author: Charlotte BIMOU
+"""
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -12,15 +18,16 @@ st.title('Time Series Forecasting Using Streamlit')
 st.write("IMPORT DATA")
 st.write("Import the time series csv file. It should have two columns labelled as 'ds' and 'y'.The 'ds' column should be of datetime format  by Pandas. The 'y' column must be numeric representing the measurement to be forecasted.")
 
-data = pd.read_csv('call_abandoned_trend.csv', sep=';')
+#data = pd.read_csv('C://Users//lenoa//TS_streamlit//Call_Center_streamlit//call_abandoned_trend.csv')
+data = pd.read_csv("call_abandoned_trend.csv")
 
 if data is not None:
-    appdata = pd.read_csv(data)
-    appdata['Date'] = pd.to_datetime(appdata['Date'],errors='coerce')
+    appdata = pd.read_csv("call_abandoned_trend.csv")
+    appdata['ds'] = pd.to_datetime(appdata['ds'],errors='coerce') 
     
     st.write(data)
     
-    max_date = appdata['Date'].max()
+    max_date = appdata['ds'].max()
 
 st.write("SELECT FORECAST PERIOD")
 
@@ -38,9 +45,9 @@ if data is not None:
     future = obj.make_future_dataframe(periods=periods_input)
     
     fcst = obj.predict(future)
-    forecast = fcst[['Date', 'yhat', 'yhat_lower', 'yhat_upper']]
+    forecast = fcst[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
 
-    forecast_filtered =  forecast[forecast['Date'] > max_date]
+    forecast_filtered =  forecast[forecast['ds'] > max_date]    
     st.write(forecast_filtered)
 
     
@@ -55,3 +62,4 @@ if data is not None:
 
     figure2 = obj.plot_components(fcst)
     st.write(figure2)
+    
