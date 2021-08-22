@@ -56,7 +56,6 @@ if data is not None:
     figure1 = obj.plot(fcst)
     st.write(figure1)
  
-    
     st.write("The next few visuals show a high level trend of predicted values, day of week trends, and yearly trends (if dataset covers multiple years). The blue shaded area represents upper and lower confidence intervals.")
       
 
