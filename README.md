@@ -6,9 +6,11 @@
 
 ## Dataset utilisé : 311 Call Center data
 
-Il s'agit de données de l'activité quotidienne d'un centre d'appels téléphonique (311)
-Lien vers les données : https://data.calgary.ca/w/hk5h-uv5k/6wv6-hjhs?cur=X75UG6BrhC1
-https://data.calgary.ca/stories/s/Open-Calgary-Terms-of-Use/u45n-7awa
+Il s'agit de données de l'activité quotidienne d'un centre d'appels téléphonique (311). Ci-dessous, les liens vers les données : 
+
+a) https://data.calgary.ca/w/hk5h-uv5k/6wv6-hjhs?cur=X75UG6BrhC1
+
+b) https://data.calgary.ca/stories/s/Open-Calgary-Terms-of-Use/u45n-7awa
 
 ## Méthode de ML appliquée sur les deux use cases: méthode hybride
 
