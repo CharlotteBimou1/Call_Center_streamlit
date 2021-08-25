@@ -19,10 +19,10 @@ st.write("IMPORT DES DONNEES")
 st.write("Import des données au format csv. La base de données doit avoir deux colonnes nommées comme suit 'ds' et 'y'.La colonne 'ds' doit être au format date. La colonne 'y' doit être numerique représentant les données à prévoire.")
 
 #data = pd.read_csv('C://Users//lenoa//TS_streamlit//Call_Center_streamlit//call_abandoned_trend.csv')
-data = pd.read_csv("call_volume_trend.csv")
+data = pd.read_csv("call_volume_trend_1.csv")
 
 if data is not None:
-    appdata = pd.read_csv("call_volume_trend.csv")
+    appdata = pd.read_csv("call_volume_trend_1.csv")
     appdata['ds'] = pd.to_datetime(appdata['ds'],errors='coerce') 
     
     st.write(data)
